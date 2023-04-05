@@ -5,7 +5,7 @@
   }
 
 body{
-    background-image: url(/assets/images/mobile-background.png);
+    background-image: url(images/mobile-background.png);
 }
 
 h1{
@@ -62,7 +62,7 @@ h1{
     transform: scale(80%);
 }
 
-.center{
+.btn{
     align-items: center;
     display: flex;
     justify-content: center;
