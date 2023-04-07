@@ -35,23 +35,26 @@ h1{
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
     overflow-y: hidden;
-}
-    
-.horizontal-scroll::-webkit-scrollbar {
+    list-style: none;
+  }
+  
+  .horizontal-scroll::-webkit-scrollbar {
     display: none;
-}
-    
-.horizontal-scroll__item {
-      align-items: center;
-      /* background-color: red; */
-      color: white;
-      /* border: 1px solid black; */
-      display: flex;
-      flex: 0 0 180px;
-      font-size: 40px;
-      justify-content: center;
-      scroll-snap-align: center;
-    }
+  }
+  
+  .horizontal-scroll__item {
+    align-items: center;
+    /* background-color: red; */
+    color: white;
+    /* border: 1px solid black; */
+    display: flex;
+    flex: 0 0 180px;
+    font-size: 40px;
+    justify-content: center;
+    scroll-snap-align: center;
+    margin-right: 5px;
+  }
+  
 
 #shoes .horizontal-scroll{
     height: 130px;
