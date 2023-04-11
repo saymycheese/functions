@@ -7,41 +7,34 @@ const imageArray1 = [
   "assets/images/outfits/top/top6.png"
 ];
 
+const topList = document.getElementById("topList");
+addAll(topList, imageArray1) 
 
-const image1 = document.querySelector('.img-top');
-const button1 = document.querySelector('.button-top');
+// Generate random picture takes a list_select pointer to the html elelemnt and list of picture
+// It will output a random picture from the list of picture and add it to the list emlement list_selector point to 
+function addAll(list_select, listPicture) {
+  list_select.innerHTML = '';
+  for (const element of listPicture) {
+    let newListItem = document.createElement('li');
+    let newImage = document.createElement('img');
+    newImage.src = element; 
+    newListItem.appendChild(newImage);
+    list_select.appendChild(newListItem);
+  }
+}
 
-
-window.onload = () => generateRandomPicture(imageArray1);
-
-button1.addEventListener("click", () => generateRandomPicture(imageArray1));
-
-function generateRandomPicture(array){
-	let randomNum = Math.floor(Math.random() * array.length); 
-	image1.setAttribute('src', array[randomNum]);
+function generateARandomPicture(list_select, listPicture) {
+  let newImage = document.createElement('img');
+  let newListItem = document.createElement('li');
+  const randomIndex = Math.floor(Math.random() * listPicture.length);
+  newImage.src = listPicture[randomIndex]; 
+  newListItem.appendChild(newImage);
+  // append the new list item to the existing list
+  list_select.appendChild(newListItem);
 }
 
 
-
-const imageArray2 = [
-	"assets/images/outfits/bottom/bottom1.png",
-  "assets/images/outfits/bottom/bottom2.png",
-  "assets/images/outfits/bottom/bottom3.png",
-  "assets/images/outfits/bottom/bottom4.png",
-  "assets/images/outfits/bottom/bottom5.png",
-  "assets/images/outfits/bottom/bottom6.png"
-];
-
-const image2 = document.querySelector(".img-bottom");
-const button2 = document.querySelector(".button-bottom");
-
-
-window.onload = () => generateRandomPicture(imageArray2);
-
-button2.addEventListener("click", () => generateRandomPicture(imageArray2));
-
-
-function generateRandomPicture(array){
-	let randomNum = Math.floor(Math.random() * array.length); 
-	image2.setAttribute('src', array[randomNum]);
+function generateTop() {
+  topList.innerHTML = '';
+  generateARandomPicture(topList, imageArray1)
 }
